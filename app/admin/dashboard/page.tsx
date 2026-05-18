@@ -4,9 +4,24 @@ import { useState, useEffect } from 'react'
 import DashboardClient from './DashboardClient'
 import AdminLayout from '@/components/layouts/AdminLayout'
 
+interface Blog {
+  id: string
+  _id?: string
+  title: string
+  category: string
+  content: string
+  status: string
+  createdAt: string
+}
+
+interface Category {
+  _id: string
+  name: string
+}
+
 export default function DashboardPage() {
-  const [blogs, setBlogs] = useState([])
-  const [categories, setCategories] = useState([])
+  const [blogs, setBlogs] = useState<Blog[]>([])
+  const [categories, setCategories] = useState<Category[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {

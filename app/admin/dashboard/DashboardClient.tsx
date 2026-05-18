@@ -6,9 +6,11 @@ import { TrendingUp, Users, FolderOpen, FileText, Calendar, Eye, CheckCircle, Al
 
 interface DashboardClientProps {
   blogs: Array<{
-    _id: string
+    id?: string
+    _id?: string
     title: string
-    createdAt: Date
+    category?: string
+    createdAt: string | Date
     status: string
   }>
   categories: Array<{

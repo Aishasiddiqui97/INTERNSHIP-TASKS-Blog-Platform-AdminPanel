@@ -4,8 +4,17 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Card from '@/components/ui/Card'
 
+interface Blog {
+  id: string
+  title: string
+  category: string
+  content: string
+  status: string
+  createdAt: string
+}
+
 export default function AdminBlogsPage() {
-  const [blogs, setBlogs] = useState([])
+  const [blogs, setBlogs] = useState<Blog[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {

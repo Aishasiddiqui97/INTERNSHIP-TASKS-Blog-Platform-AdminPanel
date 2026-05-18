@@ -6,10 +6,15 @@ import Card from '@/components/ui/Card'
 import Input from '@/components/ui/Input'
 import { motion } from 'framer-motion'
 
+interface Category {
+  _id: string
+  name: string
+}
+
 export default function CreateBlogPage() {
-  const [categories, setCategories] = useState([])
+  const [categories, setCategories] = useState<Category[]>([])
   const [loading, setLoading] = useState(true)
-  const [featuredImage, setFeaturedImage] = useState(null)
+  const [featuredImage, setFeaturedImage] = useState<string | null>(null)
   const [imagePreview, setImagePreview] = useState('')
   const [uploading, setUploading] = useState(false)
   const [submitting, setSubmitting] = useState(false)
