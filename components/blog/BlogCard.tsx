@@ -18,7 +18,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
       </div>
       <div className="mb-4">
         <span className="inline-block px-3 py-1 bg-[#8B5CF6] text-xs font-medium rounded-full mb-2">
-          {blog.category?.name || 'Uncategorized'}
+          {(blog.categoryId as any)?.name || 'Uncategorized'}
         </span>
         <h2 className="text-xl font-bold mb-2">{blog.title}</h2>
         <p className="text-[#94A3B8] mb-4">{blog.description}</p>
